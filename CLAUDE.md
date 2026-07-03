@@ -180,3 +180,55 @@ git push
 | 安全性 | `.git/config` 中无 Token，可安全分享配置文件 |
 
 > **⚠️ 推送前检查：** `.gitignore` 已排除 `data/*.json`、`.claude/`、`*.pdf`、`*.pptx`，确保敏感和体积大的文件不会上传到公开仓库。
+
+---
+
+## 配置总览（本次会话完成的所有配置）
+
+### Git 仓库
+
+| 项目 | 值 |
+|------|-----|
+| 远程仓库 | `https://github.com/JadenC-c/macro-briefing.git` |
+| 认证方式 | Git Credential Manager（Token 加密存于 Windows 凭据管理器） |
+| 配置文件安全性 | `.git/config` 中不含 Token，可安全分享 |
+| 用户 | JadenC / caojiadongjaden@163.com |
+
+### GitHub Pages 网站
+
+| 项目 | 值 |
+|------|-----|
+| 网站地址 | `https://jadenc-c.github.io/macro-briefing/` |
+| Pages 源 | `main` 分支，根目录 (`/`) |
+| 首页 | `index.html` = 最新一期简报（每次覆盖） |
+| 历史 | `briefings/YYYY-MM-DD/` 按日期归档 |
+| 部署方式 | `git push` 后自动部署，1-2 分钟生效 |
+
+### 自动部署命令
+
+```bash
+cp "briefings/YYYY-MM-DD/YYYY-MM-DD-宏观日报.html" index.html
+git add "briefings/YYYY-MM-DD/" index.html
+git commit -m "更新宏观日报 YYYY-MM-DD"
+git push
+```
+
+### .gitignore 排除项
+
+`data/*.json` · `.claude/` · `*.pdf` · `*.pptx` · `.vscode/`
+
+### 日报格式规范
+
+| 板块 | 规则 |
+|------|------|
+| 今日关注 | 五列表格，按重要程度排序 |
+| 隔夜外盘 | 四列表格，涨红跌绿 |
+| 重大事件跟踪 | 卡片：【事件】/【最新(日期+进展)】/【现状】/【影响品种】各一行 |
+| 数据回顾 | 七列表格，利空绿·利多红·中性橙 |
+| 品种分析 | verdict badge：偏空=绿底绿字，偏多=红底红字，中性=黄底棕字 |
+| 页脚 | 只放页码（X/Y），无免责声明 |
+| 数据来源 | 正文末尾（`.dsrc`），不写"AI 生成仅供参考" |
+
+### PDF 转换
+
+Edge 无头模式 → 先 `Copy-Item` 到 `C:\temp\` 避免中文路径乱码 → 参数 `--no-pdf-header-footer` 必须加 → 页码由 CSS `@page` 规则生成
