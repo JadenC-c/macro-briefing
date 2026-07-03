@@ -27,7 +27,8 @@
    - 保存到 `briefings/YYYY-MM-DD/YYYY-MM-DD-宏观日报.html`
    - **HTML 生成后必须转 PDF**：使用 Edge 无头模式转换（见下方"PDF 转换命令"）
    - 保存到 `briefings/YYYY-MM-DD/YYYY-MM-DD-宏观日报.pdf`
-   - 在对话中展示内容摘要，告知用户完整版（MD + HTML + PDF）已保存
+   - **自动发布到网站**（见下方"自动发布到 GitHub Pages"）
+   - 在对话中展示内容摘要，告知用户完整版（MD + HTML + PDF）已保存 + 网站已更新
 
 2. **用户问宏观问题** → 参考 `prompts/macro-qa.md`：
    - 先判断问题的宏观相关性
@@ -135,3 +136,28 @@ f:\AI project\宏观分析\
     ├── calendar.json           # 经济日历缓存
     └── indicators.json         # 数据缓存
 ```
+
+### 自动发布到 GitHub Pages
+
+简报生成完成后，自动执行以下部署命令：
+
+```bash
+# 1. 复制最新 HTML 到根目录（覆盖 index.html）
+cp "briefings/YYYY-MM-DD/YYYY-MM-DD-宏观日报.html" index.html
+
+# 2. 提交并推送到 GitHub
+cd "f:/AI project/宏观分析"
+git add briefings/ index.html && git commit -m "更新宏观日报：YYYY-MM-DD" && git push
+```
+
+**发布说明：**
+
+| 项目 | 说明 |
+|------|------|
+| 网站地址 | `https://jadenc-c.github.io/macro-briefing/` |
+| GitHub 仓库 | `https://github.com/JadenC-c/macro-briefing` |
+| 部署方式 | 推送后 GitHub Pages 自动部署（约 1-2 分钟生效） |
+| index.html | 始终展示最新一期简报内容 |
+| briefings/ | 历史简报归档（可按日期浏览） |
+
+> **重要：** Token 已内嵌在 remote URL 中（`git remote -v` 可见），无需每次输入密码。推送前确保无敏感文件（.gitignore 已排除 data/*.json、.claude/、*.pdf、*.pptx）。
