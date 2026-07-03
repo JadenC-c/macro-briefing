@@ -121,43 +121,62 @@ f:\AI project\宏观分析\
 ├── README.md                    # 用户使用说明
 ├── config.json                  # 品种和数据源配置
 ├── CLAUDE.md                    # 本文件
+├── .gitignore                   # Git 忽略规则（排除 data/、.claude/、PDF/PPTX）
+├── index.html                   # 网站首页（始终为最新一期简报）
+├── export-pdf.ps1               # Edge 无头模式 PDF 转换脚本
 ├── knowledge/
 │   ├── macro-commodity-map.md  # 宏观→品种映射（AI必读）
 │   └── indicator-guide.md      # 指标解读指南（AI必读）
 ├── prompts/
 │   ├── daily-briefing.md       # 简报生成详细指令
+│   ├── daily-briefing-html-template.md  # HTML 排版规范模板
 │   └── macro-qa.md             # 问答详细指令
 ├── briefings/
 │   └── YYYY-MM-DD/             # 每日简报文件夹
 │       ├── YYYY-MM-DD-宏观日报.md       # 简报 Markdown
 │       ├── YYYY-MM-DD-宏观日报.html     # 简报网页版
-│       └── YYYY-MM-DD-宏观日报.pdf      # 简报 PDF
-└── data/
-    ├── calendar.json           # 经济日历缓存
-    └── indicators.json         # 数据缓存
+│       └── YYYY-MM-DD-宏观日报.pdf      # 简报 PDF（不上传 GitHub）
+├── data/
+│   ├── calendar.json           # 经济日历缓存（不上传）
+│   ├── indicators.json         # 数据缓存（不上传）
+│   └── events.json             # 重大事件跟踪（不上传）
+└── .claude/                    # Claude 本地配置（不上传）
 ```
 
 ### 自动发布到 GitHub Pages
 
-简报生成完成后，自动执行以下部署命令：
+简报生成完成后，自动执行以下部署命令（在生成 MD/HTML/PDF 之后）：
 
 ```bash
-# 1. 复制最新 HTML 到根目录（覆盖 index.html）
+# 1. 复制最新 HTML 到根目录 index.html（作为网站首页）
 cp "briefings/YYYY-MM-DD/YYYY-MM-DD-宏观日报.html" index.html
 
-# 2. 提交并推送到 GitHub
+# 2. 暂存新增简报 + index.html，提交并推送
 cd "f:/AI project/宏观分析"
-git add briefings/ index.html && git commit -m "更新宏观日报：YYYY-MM-DD" && git push
+git add "briefings/YYYY-MM-DD/" index.html
+git commit -m "更新宏观日报 YYYY-MM-DD"
+git push
 ```
 
-**发布说明：**
+> 推送后 GitHub Pages **自动部署**，约 1-2 分钟网站即更新为最新内容。
+
+**发布信息：**
 
 | 项目 | 说明 |
 |------|------|
 | 网站地址 | `https://jadenc-c.github.io/macro-briefing/` |
 | GitHub 仓库 | `https://github.com/JadenC-c/macro-briefing` |
-| 部署方式 | 推送后 GitHub Pages 自动部署（约 1-2 分钟生效） |
-| index.html | 始终展示最新一期简报内容 |
-| briefings/ | 历史简报归档（可按日期浏览） |
+| Pages 源 | `main` 分支根目录 (`/`) |
+| index.html | 始终为最新一期简报（每次覆盖） |
+| briefings/ | 历史简报归档，可按日期浏览 |
 
-> **重要：** Token 已内嵌在 remote URL 中（`git remote -v` 可见），无需每次输入密码。推送前确保无敏感文件（.gitignore 已排除 data/*.json、.claude/、*.pdf、*.pptx）。
+**认证方式：**
+
+| 项目 | 说明 |
+|------|------|
+| 存储位置 | Windows 凭据管理器（加密存储） |
+| 管理工具 | Git Credential Manager (GCM) |
+| 使用方式 | `git push` 时自动读取，无需输入密码 |
+| 安全性 | `.git/config` 中无 Token，可安全分享配置文件 |
+
+> **⚠️ 推送前检查：** `.gitignore` 已排除 `data/*.json`、`.claude/`、`*.pdf`、`*.pptx`，确保敏感和体积大的文件不会上传到公开仓库。
