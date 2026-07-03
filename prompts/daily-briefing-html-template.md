@@ -24,8 +24,8 @@
 |------|------|---------------|------|
 | 主色-标题/表头 | `#1e3a5f` | `th`, `h1`, `h2` color | 深蓝，沉稳专业 |
 | 强调色-链接/引用 | `#2563eb` | `a`, `blockquote` border-left | 亮蓝，可点击感 |
-| 🔴 利多/上涨/升级 | `#dc2626` | `.red`, `.bearish`, `.event.up`, `.etag.up` | 中国习惯：红涨 |
-| 🟢 利空/下跌/缓和 | `#16a34a` | `.green`, `.bullish`, `.event.dn`, `.etag.dn` | 中国习惯：绿跌 |
+| 🔴 利多/上涨/升级 | `#dc2626` | `.red`, `.bullish`, `.event.up`, `.etag.up` | 中国习惯：红涨 |
+| 🟢 利空/下跌/缓和 | `#16a34a` | `.green`, `.bearish`, `.event.dn`, `.etag.dn` | 中国习惯：绿跌 |
 | 🟠 中性/持续 | `#d97706` / `#92400e` | `.orange`, `.neutral`, `.event.on`, `.etag.on` | 橙色表示待观察 |
 | ⬜ 边框/分隔 | `#e5e7eb` | `td` border, `hr`, `h2` border | 浅灰，不抢眼 |
 
@@ -40,8 +40,8 @@
 | 橙色事件卡 | `#fffbeb` | `.event.on` 持续事件 |
 | 绿色事件卡 | `#f0fdf4` | `.event.dn` 缓和事件 |
 | 默认事件卡 | `#f9fafb` | `.event` 默认背景 |
-| 偏空 badge | `#fee2e2` | `.bearish` verdict 背景 |
-| 偏多 badge | `#dcfce7` | `.bullish` verdict 背景 |
+| 偏空 badge | `#dcfce7` | `.bearish` verdict 背景 |
+| 偏多 badge | `#fee2e2` | `.bullish` verdict 背景 |
 | 中性 badge | `#fef3c7` | `.neutral` verdict 背景 |
 
 ---
@@ -64,9 +64,9 @@ blockquote { border-left: 3px solid #2563eb; margin: 12px 0; padding: 8px 14px; 
 ol { margin: 6px 0; padding-left: 22px; } ol li { margin: 4px 0 8px; font-size: 14px; }
 ul { margin: 6px 0; padding-left: 20px; } ul li { margin: 5px 0; font-size: 14px; }
 .verdict { display: inline-block; padding: 2px 12px; border-radius: 4px; font-weight: bold; font-size: 13px; margin: 0 4px; }
-.bearish { background: #fee2e2; color: #dc2626; }
+.bearish { background: #dcfce7; color: #16a34a; }
 .neutral { background: #fef3c7; color: #92400e; }
-.bullish { background: #dcfce7; color: #16a34a; }
+.bullish { background: #fee2e2; color: #dc2626; }
 .verdict-sep { margin: 0 6px; color: #9ca3af; }
 .event { margin: 14px 0; padding: 10px 14px; background: #f9fafb; border-radius: 6px; border-left: 3px solid #d1d5db; }
 .event.up { border-left-color: #dc2626; background: #fef2f2; }
@@ -172,22 +172,25 @@ hr { border: none; border-top: 1px solid #e5e7eb; margin: 24px 0; }
 <blockquote>持续追踪影响品种的宏观事件，记录演进轨迹。每日更新最新进展。</blockquote>
 
 <div class="event dn">
-  <span class="etag dn">缓和</span> <strong>事件标题</strong> ｜ 最新：M月D日
-  <br><br><span class="flabel">事件</span>：...2-3句话描述事件本身和最新进展...
+  <span class="etag dn">缓和</span> <strong>事件标题</strong>
+  <br><br><span class="flabel">事件</span>：...事件背景概述，1-2句话说清来龙去脉...
+  <br><br><span class="flabel">最新（M月D日）</span>：...具体时间 + 最新发生的事 + 影响...
   <br><br><span class="flabel">现状</span>：...当前状态判断 + 后续关注点...
   <br><br><span class="flabel">影响品种</span>：品种名 → 传导路径 → <strong>方向判断</strong>
 </div>
 
 <div class="event on">
-  <span class="etag on">持续</span> <strong>事件标题</strong> ｜ 最新：M月D日
+  <span class="etag on">持续</span> <strong>事件标题</strong>
   <br><br><span class="flabel">事件</span>：...
+  <br><br><span class="flabel">最新（M月D日）</span>：...
   <br><br><span class="flabel">现状</span>：...
   <br><br><span class="flabel">影响品种</span>：...
 </div>
 
 <div class="event up">
-  <span class="etag up">升级</span> <strong>事件标题</strong> ｜ 最新：M月D日
+  <span class="etag up">升级</span> <strong>事件标题</strong>
   <br><br><span class="flabel">事件</span>：...
+  <br><br><span class="flabel">最新（M月D日）</span>：...
   <br><br><span class="flabel">现状</span>：...
   <br><br><span class="flabel">影响品种</span>：...
 </div>
@@ -250,9 +253,9 @@ hr { border: none; border-top: 1px solid #e5e7eb; margin: 24px 0; }
 
 | 判断 | CSS class | 背景色 | 文字色 |
 |------|-----------|--------|--------|
-| 偏空 | `.verdict.bearish` | `#fee2e2` | `#dc2626` |
+| 偏空 | `.verdict.bearish` | `#dcfce7` | `#16a34a` |
 | 中性/中性偏空/中性偏多 | `.verdict.neutral` | `#fef3c7` | `#92400e` |
-| 偏多 | `.verdict.bullish` | `#dcfce7` | `#16a34a` |
+| 偏多 | `.verdict.bullish` | `#fee2e2` | `#dc2626` |
 
 **判断格式固定**：`短期【偏X】· 中期【偏X】`
 
@@ -378,9 +381,9 @@ hr { border: none; border-top: 1px solid #e5e7eb; margin: 24px 0; }
 │   .orange   = 橙字 #d97706  (中性)                       │
 ├─────────────────────────────────────────────────────────┤
 │ 品种判断 badge（span.verdict）                            │
-│   .bearish  = 红底 #fee2e2 / 红字 #dc2626  偏空          │
+│   .bearish  = 绿底 #dcfce7 / 绿字 #16a34a  偏空          │
 │   .neutral  = 黄底 #fef3c7 / 棕字 #92400e  中性          │
-│   .bullish  = 绿底 #dcfce7 / 绿字 #16a34a  偏多          │
+│   .bullish  = 红底 #fee2e2 / 红字 #dc2626  偏多          │
 ├─────────────────────────────────────────────────────────┤
 │ 事件卡片（div.event）                                     │
 │   .event.up = 红左边框 + 红背景   升级                    │
