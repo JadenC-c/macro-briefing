@@ -1,0 +1,19 @@
+# 数据缓存（含个人信息/临时数据，不上传公开仓库）
+data/calendar.json
+data/indicators.json
+data/events.json
+
+# Claude 本地配置（不公开）
+.claude/
+
+# 系统文件
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# 体积大的二进制文件（本地保留即可）
+*.pdf
+*.pptx
+
+# VS Code
+.vscode/

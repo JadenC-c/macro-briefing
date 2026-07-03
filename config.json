@@ -1,0 +1,108 @@
+{
+  "project": {
+    "name": "宏观分析 Agent",
+    "version": "1.0.0",
+    "description": "面向大宗商品期货交易员的每日宏观简报 + 随问随答系统"
+  },
+  "trader": {
+    "products": [
+      {"name": "玻璃", "code": "FG", "exchange": "郑商所", "group": "建材"},
+      {"name": "纯碱", "code": "SA", "exchange": "郑商所", "group": "建材"},
+      {"name": "螺纹钢", "code": "RB", "exchange": "上期所", "group": "黑色"},
+      {"name": "热卷", "code": "HC", "exchange": "上期所", "group": "黑色"},
+      {"name": "铁矿石", "code": "I", "exchange": "大商所", "group": "黑色"},
+      {"name": "焦炭", "code": "J", "exchange": "大商所", "group": "黑色"},
+      {"name": "焦煤", "code": "JM", "exchange": "大商所", "group": "黑色"},
+      {"name": "铜", "code": "CU", "exchange": "上期所", "group": "有色"},
+      {"name": "铝", "code": "AL", "exchange": "上期所", "group": "有色"},
+      {"name": "锌", "code": "ZN", "exchange": "上期所", "group": "有色"}
+    ],
+    "trading_hours": {
+      "morning_session": "09:00-11:30",
+      "afternoon_session": "13:30-15:00",
+      "night_session": "21:00-23:00",
+      "timezone": "Asia/Shanghai"
+    }
+  },
+  "macro_indicators": {
+    "domestic": [
+      {"name": "中国制造业PMI", "frequency": "月度", "source": "国家统计局", "importance": "极高"},
+      {"name": "中国财新制造业PMI", "frequency": "月度", "source": "财新/Markit", "importance": "高"},
+      {"name": "中国财新服务业PMI", "frequency": "月度", "source": "财新/Markit", "importance": "中"},
+      {"name": "社会融资规模增量", "frequency": "月度", "source": "中国人民银行", "importance": "极高"},
+      {"name": "新增人民币贷款", "frequency": "月度", "source": "中国人民银行", "importance": "极高"},
+      {"name": "M2同比增速", "frequency": "月度", "source": "中国人民银行", "importance": "高"},
+      {"name": "CPI同比", "frequency": "月度", "source": "国家统计局", "importance": "中"},
+      {"name": "PPI同比", "frequency": "月度", "source": "国家统计局", "importance": "高"},
+      {"name": "规模以上工业增加值", "frequency": "月度", "source": "国家统计局", "importance": "高"},
+      {"name": "固定资产投资增速", "frequency": "月度", "source": "国家统计局", "importance": "极高"},
+      {"name": "房地产开发投资增速", "frequency": "月度", "source": "国家统计局", "importance": "极高"},
+      {"name": "房屋新开工面积", "frequency": "月度", "source": "国家统计局", "importance": "极高"},
+      {"name": "房屋竣工面积", "frequency": "月度", "source": "国家统计局", "importance": "极高"},
+      {"name": "商品房销售面积", "frequency": "月度", "source": "国家统计局", "importance": "极高"},
+      {"name": "基建投资增速", "frequency": "月度", "source": "国家统计局", "importance": "极高"},
+      {"name": "LPR利率", "frequency": "月度", "source": "中国人民银行", "importance": "极高"},
+      {"name": "MLF操作", "frequency": "月度", "source": "中国人民银行", "importance": "高"}
+    ],
+    "global": [
+      {"name": "美国非农就业", "frequency": "月度", "source": "美国劳工部", "importance": "极高"},
+      {"name": "美国CPI同比", "frequency": "月度", "source": "美国劳工部", "importance": "极高"},
+      {"name": "美国核心PCE", "frequency": "月度", "source": "美国商务部", "importance": "极高"},
+      {"name": "美联储利率决议", "frequency": "6周一次", "source": "FOMC", "importance": "极高"},
+      {"name": "美国ISM制造业PMI", "frequency": "月度", "source": "ISM", "importance": "极高"},
+      {"name": "欧元区制造业PMI", "frequency": "月度", "source": "S&P Global", "importance": "高"},
+      {"name": "全球制造业PMI", "frequency": "月度", "source": "JPMorgan", "importance": "高"},
+      {"name": "美元指数", "frequency": "每日", "source": "ICE", "importance": "极高"},
+      {"name": "美国10年期国债收益率", "frequency": "每日", "source": "US Treasury", "importance": "极高"},
+      {"name": "EIA原油库存", "frequency": "周度", "source": "EIA", "importance": "中"},
+      {"name": "LME铜库存", "frequency": "每日", "source": "LME", "importance": "高"}
+    ]
+  },
+  "data_sources": {
+    "jin10": {
+      "url": "https://www.jin10.com/calendar",
+      "description": "金十数据-经济日历（中国市场核心数据源）",
+      "type": "calendar"
+    },
+    "forexfactory": {
+      "url": "https://www.forexfactory.com/calendar",
+      "description": "全球宏观经济数据日历",
+      "type": "calendar"
+    },
+    "eastmoney_cjsj": {
+      "url": "https://data.eastmoney.com/cjsj/",
+      "description": "东方财富-中国宏观经济数据",
+      "type": "data"
+    },
+    "eastmoney_futures": {
+      "url": "https://quote.eastmoney.com/qihuo/",
+      "description": "东方财富-期货行情",
+      "type": "market"
+    },
+    "sina_finance": {
+      "url": "https://finance.sina.com.cn/",
+      "description": "新浪财经-综合财经资讯",
+      "type": "news"
+    },
+    "wallstreetcn": {
+      "url": "https://wallstreetcn.com/",
+      "description": "华尔街见闻-宏观深度解读",
+      "type": "news_analysis"
+    },
+    "cls": {
+      "url": "https://www.cls.cn/",
+      "description": "财联社-快讯和市场新闻",
+      "type": "news"
+    }
+  },
+  "schedule": {
+    "briefing_time": "07:30",
+    "timezone": "Asia/Shanghai",
+    "trading_days_only": true
+  },
+  "output": {
+    "briefing_dir": "briefings/",
+    "format": "markdown",
+    "filename_pattern": "YYYY-MM-DD.md"
+  }
+}
