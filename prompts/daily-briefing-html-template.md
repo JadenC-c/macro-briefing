@@ -253,9 +253,9 @@ hr { border: none; border-top: 1px solid #e5e7eb; margin: 24px 0; }
 
 | 判断 | CSS class | 背景色 | 文字色 |
 |------|-----------|--------|--------|
-| 偏空 | `.verdict.bearish` | `#dcfce7` | `#16a34a` |
-| 中性/中性偏空/中性偏多 | `.verdict.neutral` | `#fef3c7` | `#92400e` |
-| 偏多 | `.verdict.bullish` | `#fee2e2` | `#dc2626` |
+| 偏空 / 中性偏空 | `.verdict.bearish` | `#dcfce7` | `#16a34a` |
+| 中性 | `.verdict.neutral` | `#fef3c7` | `#92400e` |
+| 偏多 / 中性偏多 | `.verdict.bullish` | `#fee2e2` | `#dc2626` |
 
 **判断格式固定**：`短期【偏X】· 中期【偏X】`
 
@@ -357,7 +357,7 @@ hr { border: none; border-top: 1px solid #e5e7eb; margin: 24px 0; }
 - [ ] ③ 板块间用 `<hr>` 分隔（目录后、1-2-3-4-5-6-7 各板块之间、7 之后到 footer 之前）
 - [ ] ④ 利空 = `.green` 绿字，利多 = `.red` 红字，中性 = `.orange` 橙字（中国习惯：红涨绿跌）
 - [ ] ⑤ 事件卡片状态三色：升级 `.up`（红）、持续 `.on`（橙）、缓和 `.dn`（绿）
-- [ ] ⑥ verdict badge 三色：偏空 `.bearish`（红底）、中性 `.neutral`（黄底）、偏多 `.bullish`（绿底）
+- [ ] ⑥ verdict badge：偏空/中性偏空 `.bearish`（绿底绿字）、中性 `.neutral`（黄底棕字）、偏多/中性偏多 `.bullish`（红底红字）
 - [ ] ⑦ 品种判断格式固定：`短期【偏X】· 中期【偏X】`
 - [ ] ⑧ 表格表头深蓝底 `#1e3a5f` + 白字，偶数行 `#f8fafc` 背景
 - [ ] ⑨ blockquote 蓝色左边框 + `#f0f4ff` 背景；警告类加 `.warn` class 变橙色
@@ -381,9 +381,9 @@ hr { border: none; border-top: 1px solid #e5e7eb; margin: 24px 0; }
 │   .orange   = 橙字 #d97706  (中性)                       │
 ├─────────────────────────────────────────────────────────┤
 │ 品种判断 badge（span.verdict）                            │
-│   .bearish  = 绿底 #dcfce7 / 绿字 #16a34a  偏空          │
-│   .neutral  = 黄底 #fef3c7 / 棕字 #92400e  中性          │
-│   .bullish  = 红底 #fee2e2 / 红字 #dc2626  偏多          │
+│   .bearish  = 绿底 #dcfce7 / 绿字 #16a34a  偏空/中性偏空   │
+│   .neutral  = 黄底 #fef3c7 / 棕字 #92400e  中性           │
+│   .bullish  = 红底 #fee2e2 / 红字 #dc2626  偏多/中性偏多   │
 ├─────────────────────────────────────────────────────────┤
 │ 事件卡片（div.event）                                     │
 │   .event.up = 红左边框 + 红背景   升级                    │
