@@ -1,10 +1,10 @@
-param(
+﻿﻿param(
     [string]$Date = (Get-Date -Format "yyyy-MM-dd")
 )
 
 $briefingDir = Join-Path $PSScriptRoot "briefings\$Date"
-$htmlFile = Join-Path $briefingDir "$Date.html"
-$pdfFile  = Join-Path $briefingDir "$Date.pdf"
+$htmlFile = Join-Path $briefingDir "$Date-宏观日报.html"
+$pdfFile  = Join-Path $briefingDir "$Date-宏观日报.pdf"
 
 $edgePaths = @(
     "C:\Program Files (x86)\Microsoft\Edge\Application\msedge.exe",
@@ -42,14 +42,21 @@ Write-Host "Browser: $edge"
 Write-Host "Input:   $htmlFile"
 Write-Host "Output:  $pdfFile"
 
-$htmlUri = "file:///" + ($htmlFile -replace '\\', '/')
+# Copy to temp to avoid Chinese path encoding issues
+$tempHtml = "C:\temp\briefing.html"
+$tempPdf  = "C:\temp\briefing.pdf"
+Copy-Item -Path $htmlFile -Destination $tempHtml -Force
 
-& $edge --headless --disable-gpu --print-to-pdf="$pdfFile" --no-pdf-header-footer $htmlUri
+$htmlUri = "file:///C:/temp/briefing.html"
+& $edge --headless --disable-gpu --print-to-pdf="$tempPdf" --no-pdf-header-footer $htmlUri
 
-if (Test-Path $pdfFile) {
+if (Test-Path $tempPdf) {
+    Copy-Item -Path $tempPdf -Destination $pdfFile -Force
     $size = (Get-Item $pdfFile).Length
     Write-Host "SUCCESS: PDF created ($size bytes)"
-    Start-Process $pdfFile
+    # Clean up temp files
+    Remove-Item $tempHtml -Force -ErrorAction SilentlyContinue
+    Remove-Item $tempPdf -Force -ErrorAction SilentlyContinue
 } else {
     Write-Host "FAILED: PDF not created."
     exit 1
