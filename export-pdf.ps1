@@ -1,4 +1,4 @@
-﻿﻿param(
+﻿param(
     [string]$Date = (Get-Date -Format "yyyy-MM-dd")
 )
 
@@ -49,6 +49,12 @@ Copy-Item -Path $htmlFile -Destination $tempHtml -Force
 
 $htmlUri = "file:///C:/temp/briefing.html"
 & $edge --headless --disable-gpu --print-to-pdf="$tempPdf" --no-pdf-header-footer $htmlUri
+
+# Edge may finish writing the PDF slightly after process exit; retry up to 10s
+$deadline = (Get-Date).AddSeconds(10)
+while (-not (Test-Path $tempPdf) -and (Get-Date) -lt $deadline) {
+    Start-Sleep -Milliseconds 500
+}
 
 if (Test-Path $tempPdf) {
     Copy-Item -Path $tempPdf -Destination $pdfFile -Force

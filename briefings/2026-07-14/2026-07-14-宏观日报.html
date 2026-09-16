@@ -1,0 +1,355 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<title>宏观盘前简报 —— 2026年7月14日（周二）</title>
+<style>
+@page { margin-bottom: 24mm; @bottom-center { content: counter(page) "/" counter(pages); font-size: 12px; color: #9ca3af; font-family: "Microsoft YaHei","SimHei",sans-serif; } } @media print { body { margin: 0 0 20px 0; } }
+body { font-family: "Microsoft YaHei", "SimHei", sans-serif; font-size: 14px; max-width: 960px; margin: 20px auto; padding: 0 24px; color: #1a1a1a; line-height: 1.85; background: #fff; }
+h1 { font-size: 20px; border-bottom: 2px solid #2563eb; padding: 12px 0 10px; color: #1e3a5f; position: sticky; top: 0; background: #fff; z-index: 100; margin-top: 0; }
+h2 { font-size: 16px; margin-top: 32px; color: #1e3a5f; border-bottom: 1px solid #e5e7eb; padding-bottom: 6px; }
+h3 { font-size: 14px; margin-top: 24px; color: #374151; }
+table { width: 100%; border-collapse: collapse; margin: 10px 0 16px; font-size: 14px; }
+th { background: #1e3a5f; color: #fff; padding: 7px 9px; text-align: left; font-weight: 600; font-size: 14px; }
+td { padding: 6px 9px; border-bottom: 1px solid #e5e7eb; vertical-align: top; font-size: 14px; }
+tr:nth-child(even) td { background: #f8fafc; } tbody tr:hover td { background: #dbeafe; }
+.red { color: #dc2626; font-weight: bold; } .green { color: #16a34a; font-weight: bold; } .orange { color: #d97706; font-weight: bold; }
+blockquote { border-left: 3px solid #2563eb; margin: 12px 0; padding: 8px 14px; background: #f0f4ff; color: #374151; font-size: 14px; }
+.warn { border-left-color: #d97706; background: #fffbeb; }
+ol { margin: 6px 0; padding-left: 22px; } ol li { margin: 4px 0 8px; font-size: 14px; }
+ul { margin: 6px 0; padding-left: 20px; } ul li { margin: 5px 0; font-size: 14px; }
+.verdict { display: inline-block; padding: 2px 12px; border-radius: 4px; font-weight: bold; font-size: 13px; margin: 0 4px; }
+.bearish { background: #dcfce7; color: #16a34a; }
+.neutral { background: #fef3c7; color: #92400e; }
+.bullish { background: #fee2e2; color: #dc2626; }
+.verdict-sep { margin: 0 6px; color: #9ca3af; }
+.event { margin: 16px 0; padding: 12px 16px; background: #f9fafb; border-radius: 8px; border-left: 3px solid #d1d5db; box-shadow: 0 1px 4px rgba(0,0,0,0.06); transition: box-shadow 0.2s; } .event:hover { box-shadow: 0 2px 10px rgba(0,0,0,0.10); }
+.event.up { border-left-color: #dc2626; background: #fef2f2; }
+.event.on  { border-left-color: #d97706; background: #fffbeb; }
+.event.dn  { border-left-color: #16a34a; background: #f0fdf4; }
+.etag { display: inline-block; padding: 1px 8px; border-radius: 3px; font-size: 12px; font-weight: bold; margin-right: 6px; color: #fff; }
+.etag.up { background: #dc2626; } .etag.on { background: #d97706; } .etag.dn { background: #16a34a; }
+.flabel { font-weight: bold; color: #374151; }
+.retlink { text-align: right; font-size: 13px; margin-bottom: 8px; }
+.retlink a { color: #2563eb; text-decoration: none; }
+hr { border: none; border-top: 1px solid #e5e7eb; margin: 24px 0; }
+.footer { font-size: 12px; color: #9ca3af; margin-top: 30px; text-align: center; } .footer .page-num::after { content: "— " counter(page) " —"; } .dsrc { font-size: 12px; color: #9ca3af; margin-top: 24px; }
+/* === 目录卡片化 === */
+#toc+ul { background: #f8fafc; border: 1px solid #e5e7eb; border-radius: 8px; padding: 16px 28px; box-shadow: 0 1px 3px rgba(0,0,0,0.04); }
+#toc+ul li { margin: 4px 0; }
+/* === 量化数据右对齐 === */
+td:nth-child(3), td:nth-child(4), td:nth-child(5), td:nth-child(6) { text-align: right; }
+th:nth-child(3), th:nth-child(4), th:nth-child(5), th:nth-child(6) { text-align: right; }
+/* === 响应式适配 === */
+@media (max-width: 768px) {
+  body { padding: 0 12px; font-size: 13px; }
+  h1 { font-size: 18px; position: static; }
+  h2 { font-size: 15px; margin-top: 24px; }
+  table { font-size: 12px; }
+  th, td { padding: 4px 5px; }
+  .event { padding: 8px 10px; }
+  #toc+ul { padding: 12px 16px; }
+}
+@media (max-width: 480px) {
+  body { padding: 0 8px; font-size: 12px; }
+  h1 { font-size: 16px; }
+  table { display: block; overflow-x: auto; white-space: nowrap; font-size: 11px; }
+  #toc+ul { padding: 10px 14px; font-size: 13px; }
+}
+</style>
+</head>
+<body>
+
+<h1>宏观盘前简报 —— 2026年7月14日（周二）</h1>
+
+<h2 id="toc">目录</h2>
+<ul>
+  <li><a href="#s1">1. 今日关注</a></li>
+  <li><a href="#s2">2. 隔夜外盘</a></li>
+  <li><a href="#s3">3. 重大事件跟踪</a></li>
+  <li><a href="#s4">4. 近期重要数据回顾</a></li>
+  <li><a href="#s5">5. 品种宏观影响分析</a>
+    <ul>
+      <li><a href="#s51">5.1 建材板块（玻璃 FG · 纯碱 SA）</a></li>
+      <li><a href="#s52">5.2 黑色系（螺纹钢 RB · 热卷 HC · 铁矿石 I · 焦炭 J · 焦煤 JM）</a></li>
+      <li><a href="#s53">5.3 有色板块（铜 CU · 铝 AL · 锌 ZN）</a></li>
+    </ul>
+  </li>
+  <li><a href="#s6">6. 今日宏观交易主题</a></li>
+  <li><a href="#s7">7. 风险提示</a></li>
+</ul>
+<hr>
+
+<h2 id="s1">1. 今日关注</h2>
+<p class="retlink"><a href="#toc">【返回目录】</a></p>
+<table>
+<tr><th>时间</th><th>数据/事件</th><th>预期值</th><th>前值</th><th>影响品种</th></tr>
+<tr><td>10:00</td><td>中国6月贸易帐（美元计）</td><td>1206亿美元</td><td>1054.3亿美元</td><td>铜、热卷、铁矿石</td></tr>
+<tr><td>10:00</td><td>中国6月出口同比</td><td>+18.2%</td><td>+19.4%</td><td>热卷、铜</td></tr>
+<tr><td>10:00</td><td>中国6月进口同比</td><td>+24.0%</td><td>+27.4%</td><td>铁矿石、铜</td></tr>
+<tr><td>盘中</td><td>中国6月社融/新增贷款</td><td>社融约3.5万亿</td><td>社融2.07万亿(5月)</td><td>螺纹钢、玻璃、铜</td></tr>
+<tr><td>20:30</td><td><strong>美国6月CPI同比</strong></td><td><strong>+3.8%~3.9%</strong></td><td>+4.2%</td><td>铜、铁矿石、铝、锌</td></tr>
+<tr><td>20:30</td><td>美国6月核心CPI同比</td><td>+2.85%~2.9%</td><td>+2.9%</td><td>铜、铁矿石</td></tr>
+<tr><td>22:00</td><td><strong>美联储主席Warsh国会听证会</strong></td><td>—</td><td>—</td><td>全品种</td></tr>
+<tr><td>盘前</td><td>摩根大通/美银/花旗/高盛Q2财报</td><td>—</td><td>—</td><td>铜（风险偏好）</td></tr>
+</table>
+<blockquote><strong>今日最重要的宏观事件</strong>：美国6月CPI + 美联储新任主席Warsh首次国会听证会同日登场，是决定7月FOMC利率路径的"超级星期二"。国内方面关注中国6月贸易数据和社融数据。叠加美伊冲突急剧升级，今日市场波动可能极大。</blockquote>
+<hr>
+
+<h2 id="s2">2. 隔夜外盘</h2>
+<p class="retlink"><a href="#toc">【返回目录】</a></p>
+<table>
+<tr><th>资产</th><th>收盘价</th><th>涨跌幅</th><th>关键驱动</th></tr>
+<tr><td>道琼斯工业指数</td><td>52,498.64</td><td class="green">-0.26%</td><td>能源股上涨对冲科技股下跌</td></tr>
+<tr><td>标普500指数</td><td>7,515.34</td><td class="green">-0.79%</td><td>芯片股暴跌拖累，费城半导体指数-4.78%</td></tr>
+<tr><td>纳斯达克指数</td><td>25,873.18</td><td class="green">-1.55%</td><td>科技股普跌，英伟达/特斯拉跌超3%</td></tr>
+<tr><td>美元指数 (DXY)</td><td>100.9~101.1</td><td class="red">走强</td><td>美伊冲突升级→避险资金流入+加息预期升温</td></tr>
+<tr><td>美国10年期国债收益率</td><td>4.56%~4.59%</td><td class="red">+1~3bp</td><td>油价飙升→通胀担忧→抛售美债</td></tr>
+<tr><td>COMEX黄金</td><td>$4,055~4,100</td><td class="green">-1.3%~1.5%</td><td>跌破4000美元后反弹，美元走强+加息预期压制</td></tr>
+<tr><td>WTI原油</td><td>$77.80</td><td class="red">+9.4%</td><td>美伊冲突升级，美国宣布封锁伊朗港口+征收20%海峡通行费</td></tr>
+<tr><td>LME铜</td><td>$13,378~13,418</td><td class="green">-0.8%</td><td>美元走强+风险偏好下降+油价上涨压制全球需求预期</td></tr>
+<tr><td>新加坡铁矿石掉期</td><td>$98.50</td><td class="green">-0.8%</td><td>中国需求担忧+美元走强</td></tr>
+</table>
+<blockquote><strong>整体风险偏好：risk-off，避险情绪主导。</strong> 美伊冲突从"停火谈判"骤然逆转至"军事封锁+空袭"，油价暴涨近10%，市场从"衰退→降息"叙事切换到"油价飙升→通胀卷土重来→美联储被迫加息"的滞胀叙事。科技股和芯片股是最大输家，能源股逆势大涨。</blockquote>
+<hr>
+
+<h2 id="s3">3. 重大事件跟踪</h2>
+<p class="retlink"><a href="#toc">【返回目录】</a></p>
+<blockquote>持续追踪影响品种的宏观事件，记录演进轨迹。每日更新最新进展。</blockquote>
+
+<div class="event up">
+  <span class="etag up">升级</span> <strong>美伊冲突急剧升级：美国恢复海上封锁</strong>
+  <br><br><span class="flabel">事件</span>：6月中旬美伊达成伊斯兰堡停火谅解备忘录后短暂缓和。7月初伊朗恢复攻击商船，美国7月7日撤回石油出口豁免。7月8日特朗普宣布停火协议终结，此后连续多轮空袭。
+  <br><br><span class="flabel">最新（7月13日）</span>：特朗普宣布恢复对伊朗海上封锁，自封"霍尔木兹海峡守护者"，对所有经海峡货物收取20%费用，7月15日凌晨4时（北京）起执行。伊朗回应"绝不允许美国干涉"，发射无人机打击驻科威特美军设施，发射巡航导弹打击美舰。海峡船舶通行量锐减约60%。
+  <br><br><span class="flabel">现状</span>：冲突从"边打边谈"升级为全面军事对抗。油价单日暴涨9.4%，WTI收于77.80美元/桶。市场定价12月加息25bp概率接近100%。局势处于高度不确定状态，随时可能进一步升级。
+  <br><br><span class="flabel">影响品种</span>：铜 CU → 美元走强+风险偏好下降+全球需求担忧 → <strong>短期利空</strong>；铁矿石 I → 全球风险偏好下降，但油价上涨推高运输成本 → <strong>短期偏空</strong>；玻璃/纯碱 → 能源成本上升推高纯碱生产成本 → <strong>成本支撑偏多</strong>
+</div>
+
+<div class="event on">
+  <span class="etag on">持续</span> <strong>美联储货币政策预期剧烈摇摆</strong>
+  <br><br><span class="flabel">事件</span>：美国通胀持续高于2%目标（5月CPI 4.2%），但6月数据（7月14日公布）预期回落至3.8-3.9%。新任美联储主席Warsh面临首次国会听证考验。市场在"通胀回落→降息"和"油价飙升→加息"之间剧烈摇摆。
+  <br><br><span class="flabel">最新（7月13日）</span>：Waller此前放话：若6月核心CPI再超预期，FOMC将"认真考虑近期加息"。CME利率期货显示9月加息概率约52-74%，12月加息25bp概率接近100%。2年期美债收益率创2025年初以来新高（4.21-4.24%）。
+  <br><br><span class="flabel">现状</span>：今晚CPI数据是决定性变量。若CPI低于预期→加息预期降温→美元回落→利多商品；若CPI超预期+Warsh鹰派→加息确认→美元继续走强→利空商品。油价暴涨使通胀前景更复杂。
+  <br><br><span class="flabel">影响品种</span>：铜 CU → 对美联储利率最敏感 → <strong>今晚CPI决定短期方向</strong>；铁矿石 I → 通过美元和风险偏好传导 → <strong>关注CPI结果</strong>；螺纹钢 RB/玻璃 FG → 间接影响，主要通过人民币汇率和风险偏好 → <strong>影响相对较小</strong>
+</div>
+
+<div class="event on">
+  <span class="etag on">持续</span> <strong>中国信用扩张疲弱</strong>
+  <br><br><span class="flabel">事件</span>：2026年以来社融增速持续回落，信贷需求不足。5月新增贷款仅5,200亿（同比少增约4,600亿），社融增量2.07万亿。居民中长期贷款（房贷）持续低迷，企业投资意愿不足。6月数据今日公布。
+  <br><br><span class="flabel">最新（7月14日）</span>：6月新增贷款约1.85万亿（预期2万亿，低于预期约7.5%），社融约3.3万亿（预期3.5万亿），M2增速8.3%。社融存量增速约7.5%，较5月回落0.2pct。票据冲量特征明显，M2-M1剪刀差持续走阔，企业活期资金活跃度低。
+  <br><br><span class="flabel">现状</span>：信用扩张处于"弱企稳"阶段，政府债和企业债是社融主要支撑，居民和企业自发融资需求仍在底部徘徊。市场对7月政治局会议和LPR下调抱有预期。
+  <br><br><span class="flabel">影响品种</span>：螺纹钢 RB → 社融是螺纹钢需求的核心领先指标 → <strong>偏空</strong>；玻璃 FG → 居民中长期贷款低迷→购房需求疲弱→竣工预期承压 → <strong>偏空</strong>；铜 CU → 中国信用扩张放缓→投资需求下滑 → <strong>偏空</strong>
+</div>
+
+<div class="event on">
+  <span class="etag on">持续</span> <strong>中国房地产数据持续筑底</strong>
+  <br><br><span class="flabel">事件</span>：2026年1-5月房地产数据全面下滑：新开工-22.6%、竣工-23.4%、销售-10.8%、开发投资-16.2%。但边际上出现改善信号：销售均价连续3个月环比上涨、竣工降幅收窄至-19.6%（单月）、库存连续3个月下降。
+  <br><br><span class="flabel">最新（7月13日）</span>：6月前两周重点城市新房成交同比+26.8%（低基数效应）。绿地控股1-6月销售面积+17%，但新开工-89.6%。300城宅地溢价率17.5%。6月完整数据预计7月15-16日由国家统计局公布。
+  <br><br><span class="flabel">现状</span>：房地产市场处于"量降价稳"的筑底阶段。销售端价格企稳，但开工端和投资端仍在加速探底。政策利好持续释放（扩大消费规划+因城施策），但传导至实际需求仍需时间。
+  <br><br><span class="flabel">影响品种</span>：玻璃 FG → 竣工降幅收窄+保交楼推进 → <strong>短期偏空中期改善</strong>；螺纹钢 RB → 新开工深度收缩 → <strong>短期偏空</strong>；纯碱 SA → 通过玻璃传导+光伏需求独立支撑 → <strong>偏空但幅度小于玻璃</strong>
+</div>
+
+<div class="event dn">
+  <span class="etag dn">缓和</span> <strong>中国房地产政策宽松周期</strong>
+  <br><br><span class="flabel">事件</span>：2025年以来，中央政府持续出台房地产宽松政策。2026年7月13日，国务院批复同意《扩大消费"十五五"规划》，提出"支持各地因城施策调整优化房地产政策"、"城中村/危旧房改造"、"住房公积金制度改革"，到2030年社零目标60万亿元。
+  <br><br><span class="flabel">最新（7月13日）</span>：国务院批复《扩大消费"十五五"规划》，提出"更好满足住房消费需求"、"实施房屋品质提升工程"、"稳步推进城中村和危旧房改造"、"多渠道增加城乡居民财产性收入"。政策方向明确，覆盖未来5年。
+  <br><br><span class="flabel">现状</span>：房地产政策方向明确宽松，但传导至实际开工和需求仍需时间。政策利好不断累积，对地产链品种形成中期支撑预期。
+  <br><br><span class="flabel">影响品种</span>：玻璃 FG → 竣工端直接受益，政策利好但传导有时滞 → <strong>中期偏多</strong>；螺纹钢 RB → 新开工+销售改善预期 → <strong>中期偏多</strong>；纯碱 SA → 通过玻璃传导 → <strong>中期偏多</strong>
+</div>
+<hr>
+
+<h2 id="s4">4. 近期重要数据回顾</h2>
+<p class="retlink"><a href="#toc">【返回目录】</a></p>
+<table>
+<tr><th>方向</th><th>数据</th><th>公布</th><th>实际值</th><th>预期值</th><th>前值</th><th>解读</th></tr>
+<tr>
+  <td><span class="red">利多</span></td>
+  <td>中国6月官方制造业PMI</td>
+  <td>6/30</td>
+  <td class="green"><strong>50.3%</strong></td>
+  <td>50.1%</td>
+  <td>50.0%</td>
+  <td>重返扩张区间，超预期+0.3pct，新订单+1.3pct至51.2%</td>
+</tr>
+<tr>
+  <td><span class="orange">中性</span></td>
+  <td>中国6月财新制造业PMI</td>
+  <td>7/1</td>
+  <td><strong>51.7</strong></td>
+  <td>—</td>
+  <td>51.8</td>
+  <td>连续7个月扩张，但降至三个月新低，出口订单连续下滑</td>
+</tr>
+<tr>
+  <td><span class="orange">中性</span></td>
+  <td>中国6月CPI同比</td>
+  <td>7/9</td>
+  <td><strong>+1.0%</strong></td>
+  <td>+1.16%</td>
+  <td>+1.2%</td>
+  <td>低于预期，猪肉-15.9%拖累食品价格，核心CPI+1.0%</td>
+</tr>
+<tr>
+  <td><span class="red">利多</span></td>
+  <td>中国6月PPI同比</td>
+  <td>7/9</td>
+  <td class="green"><strong>+4.1%</strong></td>
+  <td>+4.1%</td>
+  <td>+3.9%</td>
+  <td>符合预期，连续4个月回升，有色采选+25.5%、煤炭+20.6%</td>
+</tr>
+<tr>
+  <td><span class="orange">中性</span></td>
+  <td>中国6月M2同比</td>
+  <td>7/14</td>
+  <td><strong>+8.3%</strong></td>
+  <td>+8.5%</td>
+  <td>+8.3%(5月)</td>
+  <td>与5月持平，M2-M1剪刀差走阔，M1+4.6%</td>
+</tr>
+<tr>
+  <td><span class="green">利空</span></td>
+  <td>中国6月新增人民币贷款</td>
+  <td>7/14</td>
+  <td class="red"><strong>约1.85万亿</strong></td>
+  <td>2.0万亿</td>
+  <td>0.52万亿(5月)</td>
+  <td>低于预期约7.5%，同比少增约10%，票据冲量特征明显</td>
+</tr>
+<tr>
+  <td><span class="green">利空</span></td>
+  <td>中国6月社融增量</td>
+  <td>7/14</td>
+  <td class="red"><strong>约3.3万亿</strong></td>
+  <td>3.5万亿</td>
+  <td>2.07万亿(5月)</td>
+  <td>低于预期，社融存量增速约7.5%，较5月回落0.2pct</td>
+</tr>
+<tr>
+  <td><span class="green">利空</span></td>
+  <td>中国1-5月房屋新开工</td>
+  <td>6/16</td>
+  <td class="red"><strong>-22.6%</strong></td>
+  <td>—</td>
+  <td>-24.2%(1-4月)</td>
+  <td>降幅收窄但仍深度收缩，开发商信心不足</td>
+</tr>
+<tr>
+  <td><span class="green">利空</span></td>
+  <td>中国1-5月房屋竣工</td>
+  <td>6/16</td>
+  <td class="red"><strong>-23.4%</strong></td>
+  <td>—</td>
+  <td>-25.0%(1-4月)</td>
+  <td>保交楼推进下边际改善，单月同比-19.99%</td>
+</tr>
+<tr>
+  <td><span class="green">利空</span></td>
+  <td>中国1-5月商品房销售</td>
+  <td>6/16</td>
+  <td class="red"><strong>-10.8%</strong></td>
+  <td>—</td>
+  <td>-10.0%(1-4月)</td>
+  <td>销售面积降幅扩大，但均价连续3个月环比上涨</td>
+</tr>
+<tr>
+  <td><span class="green">利空</span></td>
+  <td>美国5月CPI同比</td>
+  <td>6/12</td>
+  <td class="red"><strong>+4.2%</strong></td>
+  <td>+3.9%</td>
+  <td>+3.8%(4月)</td>
+  <td>超预期，核心CPI+2.9%，通胀粘性超预期</td>
+</tr>
+</table>
+<blockquote><strong>整体判断</strong>：国内宏观面偏弱——PMI边际改善但金融数据和房地产数据仍疲弱，信用扩张乏力。海外宏观面偏空——美伊冲突升级推高油价、美元走强、加息预期升温。今日CPI将决定短期走向。</blockquote>
+<hr>
+
+<h2 id="s5">5. 品种宏观影响分析</h2>
+<p class="retlink"><a href="#toc">【返回目录】</a></p>
+
+<h3 id="s51">5.1 建材板块（玻璃 FG · 纯碱 SA）</h3>
+<p><strong>宏观面判断</strong>：
+  <span class="verdict neutral">短期 中性偏空</span>
+  <span class="verdict-sep">·</span>
+  <span class="verdict bullish">中期 中性偏多</span>
+</p>
+<ol>
+  <li><strong>房地产竣工边际改善，但绝对水平仍低</strong> —— 1-5月竣工-23.4%，单月同比-19.99%（较4月-25%收窄），保交楼政策效果逐步显现。6月完整数据即将公布（预计7月15-16日），市场关注单月降幅是否进一步收窄。对玻璃而言，竣工是需求最直接变量。<strong>所以呢？玻璃需求最核心的竣工指标在边际改善，但同比下降超20%意味着需求绝对量仍在萎缩，FG短期承压。</strong></li>
+  <li><strong>国务院《扩大消费"十五五"规划》利好地产链</strong> —— 7月13日国务院批复扩大消费规划，明确"因城施策调整优化房地产政策"、"城中村/危旧房改造"、"住房公积金改革"。政策方向明确宽松，但传导到现货需求至少需要3-6个月。<strong>所以呢？政策利多更多体现在中期预期层面，短期FG/SA期货价格仍由疲弱的现货基本面主导。</strong></li>
+  <li><strong>玻璃纯碱基本面：高库存+低利润+弱需求，价格已跌至历史低位</strong> —— 玻璃FG2609约962元/吨，行业连续28周亏损，库存7600万重箱（同比+13%），深加工订单仅8天。纯碱SA2609约1086元/吨（7月7日创上市新低1070），厂家库存174.7万吨，氨碱企业亏损104.6元/吨。<strong>所以呢？价格已在成本线以下运行，进一步大跌空间有限但也缺乏反弹驱动，短期大概率低位震荡。若地产数据边际改善+政策利好共振，可能触发超跌反弹。</strong></li>
+  <li><strong>美伊冲突推高能源成本</strong> —— 油价暴涨9.4%至77.80美元/桶，纯碱生产中的煤炭/天然气成本可能跟涨。<strong>所以呢？纯碱成本端有上行压力，若持续上涨可能倒逼减产，对SA价格形成成本支撑。但传导需要时间。</strong></li>
+  <li><strong>7月政治局会议预期</strong> —— 市场对7月底政治局会议出台增量稳增长政策抱有期待，尤其是房地产和基建方面。<strong>所以呢？会议前政策预期对建材板块情绪有托底作用，但"买预期卖事实"风险也存在。</strong></li>
+  <li><strong>光伏玻璃仍提供纯碱独立需求支撑</strong> —— 新能源政策持续加码，光伏新增装机维持增长，光伏玻璃在产产能对纯碱需求形成支撑。<strong>所以呢？纯碱需求并非仅依赖房地产，光伏是独立于地产周期的增量，导致SA表现相对FG略强。</strong></li>
+</ol>
+<p><strong>盘面</strong>：FG2609 约962元/吨低位震荡，SA2609 约1086元/吨，均处于历史低位附近。市场情绪悲观，但空头也面临成本支撑和潜在政策利好的双向风险。</p>
+<blockquote class="warn"><strong>本周关注</strong>：① 7月15-16日中国6月房地产数据；② 7月底政治局会议政策预期；③ 纯碱检修季开工率变化；④ 美伊冲突油价走势对能源成本的传导。</blockquote>
+
+<h3 id="s52">5.2 黑色系（螺纹钢 RB · 热卷 HC · 铁矿石 I · 焦炭 J · 焦煤 JM）</h3>
+<p><strong>宏观面判断</strong>：
+  <span class="verdict neutral">短期 中性偏空</span>
+  <span class="verdict-sep">·</span>
+  <span class="verdict neutral">中期 中性</span>
+</p>
+<ol>
+  <li><strong>房屋新开工深度收缩，螺纹钢直接需求承压</strong> —— 1-5月新开工-22.6%，5月单月-24.6%，开发商拿地和新开工意愿极弱。6月机构数据：绿地控股新开工-89.6%，建筑钢材成交环比持续下降。<strong>所以呢？螺纹钢下游需求缺乏改善基础，高温雨季（7-8月）是传统施工淡季，短期RB需求大概率延续疲弱。但市场已price-in大部分利空，需关注预期差。</strong></li>
+  <li><strong>6月社融低于预期，信用扩张乏力</strong> —— 6月新增贷款约1.85万亿（预期2万亿），同比少增约10%，M1增速仅4.6%。企业中长期贷款和居民房贷均疲弱。<strong>所以呢？信用扩张是螺纹钢需求的领先指标（领先3-6个月），社融持续偏弱意味着下半年建筑需求改善空间有限，RB中期偏空。</strong></li>
+  <li><strong>国务院扩大消费规划+政治局会议预期托底</strong> —— 政策端持续释放利好信号，包括基建投资维持强度、城中村改造、因城施策放松房地产。<strong>所以呢？政策预期为黑色系提供情绪支撑和底部保护，但在实际资金到位和开工改善前，"强预期弱现实"格局延续。</strong></li>
+  <li><strong>铁矿石成本支撑 vs 钢厂低利润</strong> —— 铁矿石SGX掉期约98.50美元/吨，港口库存相对健康。但钢厂盈利率持续下降，螺纹钢利润接近盈亏平衡线。<strong>所以呢？铁矿在黑色系中相对偏强（成本支撑+供给垄断），但钢厂低利润限制上行空间，产业链利润分配向原料端倾斜。</strong></li>
+  <li><strong>热卷相对螺纹钢更抗跌</strong> —— 制造业PMI 50.3超预期，新出口订单+1.5pct至50.1%，汽车和家电产销维持增长。<strong>所以呢？卷螺差可能继续走阔，制造业需求优于建筑业，HC基本面好于RB。</strong></li>
+  <li><strong>焦煤焦炭：供给端故事多于需求端</strong> —— 焦化利润微薄，焦炭二轮提涨博弈中。蒙古焦煤通关量稳定，供给端无重大扰动。<strong>所以呢？J/JM方向跟随黑色系整体，缺乏独立行情驱动，焦炭受环保限产影响更大。</strong></li>
+</ol>
+<p><strong>盘面</strong>：螺纹钢均价3287元/吨（Mysteel 7月10日），周产量205万吨（环比-11万吨），消费量195万吨（环比-15万吨），库存700万吨（+10万吨），供需两弱。铁矿石弱势震荡。</p>
+<blockquote class="warn"><strong>本周关注</strong>：① 7月15-16日中国6月房地产数据（新开工/竣工/销售）；② 6月固定资产投资数据；③ 7月政治局会议政策预期；④ 成材累库速度和钢厂减产力度。</blockquote>
+
+<h3 id="s53">5.3 有色板块（铜 CU · 铝 AL · 锌 ZN）</h3>
+<p><strong>宏观面判断</strong>：
+  <span class="verdict bearish">短期 偏空</span>
+  <span class="verdict-sep">·</span>
+  <span class="verdict neutral">中期 中性偏空</span>
+</p>
+<ol>
+  <li><strong>美元走强+美债收益率上行，双重压制铜价</strong> —— 美元指数回升至101附近，10年期美债收益率升至4.56-4.59%。美伊冲突→油价暴涨→通胀预期升温→加息预期回升→美元走强，形成对铜的利空传导链。<strong>所以呢？铜对美元和利率最敏感，短期承压明显。LME铜周一跌0.8%至约13378美元/吨。若今晚CPI超预期下行→加息预期降温→铜可能快速反弹。</strong></li>
+  <li><strong>今晚CPI+Warsh听证是短期方向决定性事件</strong> —— 市场预期6月CPI同比从4.2%降至3.8-3.9%，核心CPI持平2.9%。若数据低于预期，加息预期将明显降温，美元回落利多铜；若超预期+Warsh放鹰，铜可能进一步下探。<strong>所以呢？今日铜面临最大的宏观变数窗口，建议密切关注20:30数据。</strong></li>
+  <li><strong>中国PMI超预期回升至50.3，支撑铜需求预期</strong> —— 6月官方PMI 50.3（预期50.1）、财新PMI 51.7，制造业活动边际改善。铜作为"另一种形式的PMI"，与中国经济活动高度同步。<strong>所以呢？中国PMI超预期对铜有中期支撑作用，但短期被美元和避险情绪主导。</strong></li>
+  <li><strong>美伊冲突推高油价→滞胀风险→利空工业金属需求预期</strong> —— 油价暴涨9.4%至77.80美元/桶，若持续高位将压制全球经济增长预期，从而减少铜铝锌等工业金属需求。<strong>所以呢？与通常的地缘避险利多不同，此次冲突的"油价→通胀→加息→需求担忧"传导链对有色偏负面。</strong></li>
+  <li><strong>中国6月贸易数据今日公布，关注出口韧性</strong> —— 出口预期+18.2%（前值+19.4%），进口预期+24%（前值+27.4%）。若贸易数据超预期→外需韧性确认→利多热卷和铜；若低于预期→外需放缓担忧→利空。<strong>所以呢？出口数据对大起大落的铜铝锌有直接情绪影响，尤其热卷（出口占比大）更敏感。</strong></li>
+  <li><strong>铝：产能天花板+新能源需求提供底部支撑</strong> —— 中国电解铝4500万吨产能上限是政策硬约束，新能源（电动车/光伏/特高压）用铝需求增长确定性高。<strong>所以呢？铝在有色板块中相对抗跌，供给约束使其长线逻辑好于铜。关注云南枯水期减产情况。</strong></li>
+  <li><strong>锌：基建+竣工双重暴露</strong> —— 1-5月基建投资增速维持高位，但竣工-23.4%拖累镀锌需求。<strong>所以呢？锌是基建和竣工的"夹心层"，基建好但竣工差，短期方向偏空。</strong></li>
+</ol>
+<p><strong>盘面</strong>：LME铜13378-13418美元/吨（-0.8%），LME锌-0.75%，LME铅-1.11%，LME锡-1.63%。SHFE有色夜盘预计承压。</p>
+<blockquote class="warn"><strong>本周关注</strong>：① 7月14日晚间美国6月CPI（全年最重要通胀数据之一）；② 美联储主席Warsh国会证词；③ 中国6月贸易数据；④ 美国银行股Q2财报；⑤ 美元指数和美债收益率走势。</blockquote>
+<hr>
+
+<h2 id="s6">6. 今日宏观交易主题</h2>
+<p class="retlink"><a href="#toc">【返回目录】</a></p>
+<blockquote><strong>"超级星期二"——CPI + Warsh听证 + 银行财报 + 中国贸易数据同日登场，叠加美伊冲突急剧升级，今日可能是2026年宏观面最复杂的交易日之一。</strong></blockquote>
+<p><strong>今日重点关注：</strong></p>
+<ul>
+  <li><strong>主题一：美国6月CPI——通胀能否确认拐点？</strong><br>市场预期CPI同比从4.2%降至3.8-3.9%，核心CPI持平2.9%。若数据低于预期→加息预期降温→美元回落→利多铜、铁矿石等商品；若超预期→叠加Warsh鹰派→加息确认→利空全品种。<strong>对交易员而言</strong>：无论多空，CPI公布后30分钟是有色和铁矿波动最大的时段，需提前做好准备。</li>
+  <li style="margin-top:10px;"><strong>主题二：美联储新任主席Warsh首次国会听证会</strong><br>Warsh此前被视为"鹰派"，此次听证是其上任后首次公开阐述政策立场。若其表态偏鹰（强调通胀风险、为加息留空间）→美元继续走强→利空有色和黑色；若偏鸽（承认经济下行风险、暗示暂停收紧）→利多商品。<strong>对交易员而言</strong>：Warsh的每一句话都可能引发市场剧烈波动，尤其关注其对油价飙升和关税传导的评论。</li>
+  <li style="margin-top:10px;"><strong>主题三：美伊冲突——"石油武器"重出江湖</strong><br>油价单日暴涨9.4%、海峡通行量锐减60%、美国7月15日起执行封锁——这是2023年10月以来最严重的中东地缘危机。<strong>对建材/黑色交易员</strong>：短期市场情绪偏risk-off，但能源成本上涨对纯碱（煤化工）有成本支撑，对玻璃（天然气制）加剧亏损减产。<strong>对有色交易员</strong>：滞胀逻辑不利铜铝锌，但若冲突推高运输成本，铁矿石和铝可能受扰动。</li>
+</ul>
+<hr>
+
+<h2 id="s7">7. 风险提示</h2>
+<p class="retlink"><a href="#toc">【返回目录】</a></p>
+<ul>
+  <li><strong>CPI双向风险</strong>：若6月CPI超预期上行（>4.0%），叠加油价暴涨，市场可能定价7月加息→美元飙升→铜和铁矿石暴跌。若CPI大幅低于预期（<3.6%），加息预期崩溃→美元急跌→商品集体反弹。两种情况都可能出现极端波动。</li>
+  <li><strong>美伊冲突进一步升级</strong>：若伊朗封锁海峡或攻击更多油轮→油价可能突破100美元→滞胀预期全面升温→全球风险资产（包括商品）可能遭遇抛售。</li>
+  <li><strong>Warsh鹰派超预期</strong>：若Warsh暗示7月FOMC将讨论加息甚至直接加息→美债收益率和美元可能大幅上行→利空全品种。</li>
+  <li><strong>中国6月贸易数据大幅低于预期</strong>：若出口增速显著放缓→外需担忧→利空热卷、铜，并对人民币汇率形成压力。</li>
+  <li><strong>中国6月房地产数据继续恶化</strong>：若6月新开工/竣工降幅进一步扩大→利空玻璃、螺纹钢板块，可能触发新一轮下跌。</li>
+  <li><strong>流动性风险</strong>：今日数据密集+地缘冲突+银行财报季开幕，多个催化剂同时出现，市场流动性可能在关键时段急剧收缩，需防范瞬时大幅波动和滑点。</li>
+  <li><strong>7月政治局会议预期落空风险</strong>：当前市场对政治局会议出台强刺激抱有较高期待，若政策力度低于预期→"买预期卖事实"→利多出尽→黑色系和建材可能承压。</li>
+</ul>
+<hr>
+
+<p class="dsrc">数据来源：新华社、金十数据、东方财富、新浪财经、Mysteel、ForexFactory、Investing.com、上海有色网、国家统计局、中国人民银行</p>
+
+<div class="footer">
+  <span class="page-num"></span>
+</div>
+
+</body>
+</html>
