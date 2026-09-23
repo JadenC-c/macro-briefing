@@ -48,10 +48,13 @@ $tempPdf  = "C:\temp\briefing.pdf"
 Copy-Item -Path $htmlFile -Destination $tempHtml -Force
 
 $htmlUri = "file:///C:/temp/briefing.html"
-& $edge --headless --disable-gpu --print-to-pdf="$tempPdf" --no-pdf-header-footer $htmlUri
+# NOTE: modern Edge no longer supports the legacy "--headless" flag for
+# --print-to-pdf (it silently produces no file). Use "--headless=new".
+Remove-Item $tempPdf -Force -ErrorAction SilentlyContinue
+& $edge --headless=new --disable-gpu --print-to-pdf="$tempPdf" --no-pdf-header-footer $htmlUri
 
-# Edge may finish writing the PDF slightly after process exit; retry up to 10s
-$deadline = (Get-Date).AddSeconds(10)
+# Edge may finish writing the PDF slightly after process exit; retry up to 20s
+$deadline = (Get-Date).AddSeconds(20)
 while (-not (Test-Path $tempPdf) -and (Get-Date) -lt $deadline) {
     Start-Sleep -Milliseconds 500
 }
