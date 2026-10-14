@@ -2,6 +2,9 @@
 
 > **用途**：每次生成日报 HTML 时，CSS 和 DOM 结构**原样照搬**，只替换内容数据。
 > 此模板与 `daily-briefing.md` 配套使用——MD 定义内容结构，本文件定义 HTML 视觉规范。
+>
+> **生成方式**：优先用 `scripts/md2html.py -Date YYYY-MM-DD` 由 MD 转换生成，不要手写 HTML。
+> **篇幅**：格式与字数上限的唯一权威来源是 `prompts/format-baseline.md`。生成后必须跑 `verify-briefing.ps1`。
 
 ---
 
@@ -126,10 +129,13 @@ hr { border: none; border-top: 1px solid #e5e7eb; margin: 24px 0; }
 <p class="retlink"><a href="#toc">【返回目录】</a></p>
 <table>
 <tr><th>时间</th><th>数据/事件</th><th>预期值</th><th>前值</th><th>影响品种</th></tr>
-<tr><td>M/D (周X) HH:MM</td><td>数据名称</td><td>XX</td><td>XX</td><td>品种名</td></tr>
-<!-- 按重要程度排序，最重要的排最前面 -->
+<tr><td>M/D (周X) HH:MM</td><td>数据名称</td><td>XX</td><td>XX</td><td>品种（传导路径）</td></tr>
+<!-- ≤ 10 行，按重要程度降序。
+     「数据/事件」≤ 35 字且只写事件名（禁止判断语/括号解释）；
+     「影响品种」≤ 30 字，格式 品种（传导路径）；
+     准入：必须能在 3 跳内传导到 FG/SA/RB/HC/I/J/JM/CU/AL/ZN 之一。 -->
 </table>
-<blockquote><strong>今日最重要的宏观事件</strong>：...一句话核心总结...</blockquote>
+<blockquote><strong>今日最重要的宏观事件</strong>：...核心焦点 + 正反两种情形，≤ 250 字...</blockquote>
 <hr>
 ```
 
@@ -178,11 +184,19 @@ hr { border: none; border-top: 1px solid #e5e7eb; margin: 24px 0; }
   <td>一句话解读</td>
 </tr>
 </table>
-<blockquote><strong>整体判断</strong>：海外宏观面偏X...国内宏观面偏X...</blockquote>
+<!-- ≤ 18 行，按公布时间降序。
+     字数上限：方向 ≤ 6 / 数据 ≤ 25 / 公布 ≤ 8 / 实际值 ≤ 20 且「只放数值，禁止叙述与引文」/ 预期值·前值 ≤ 12 / 解读 ≤ 60 字一句话。
+     任何单元格 > 120 字即不合格。禁止"（回顾）"类历史复述行。多口径只取一个主口径进格。 -->
+<blockquote><strong>整体判断</strong>：海外宏观面偏X...国内宏观面偏X...（≤ 600 字，收口为"核心矛盾 A vs B"）</blockquote>
 <hr>
 ```
 
 ### 4.3 宏观事件跟踪（卡片列表）
+
+**结构要求（硬性）**：本章为**平铺卡片列表**，MD 对应写法是 `## 3.` 下的 `- 【标签】 **标题**` 列表。
+**禁止**出现 `### 3.1` / `### 3.2` 等子标题，也**禁止**在目录（`#toc`）中出现 `3.x` 条目——目录只有 6 个一级项 + `4.1/4.2/4.3` 三个二级项。
+
+**卡片字数上限**：标题 ≤ 70 字（只写标题，不写摘要）；「事件」≤ 200 字；「最新」≤ 500 字（只写本期新增，每条事实 ≤ 80 字）；「现状」≤ 350 字；「影响品种」≤ 250 字；**单卡片合计 ≤ 1,300 字**；**本章合计 ≤ 6,500 字**；**事件数 3–6 个**。
 
 **事件状态 ↔ CSS class 对照表**：
 
@@ -220,7 +234,7 @@ hr { border: none; border-top: 1px solid #e5e7eb; margin: 24px 0; }
   <br><br><span class="flabel">现状</span>：...
   <br><br><span class="flabel">影响品种</span>：...
 </div>
-<!-- 每期 3-6 个事件，按重要程度排序 -->
+<!-- 每期 3–6 个事件，按重要程度排序；单卡片 ≤ 1,300 字；本章 ≤ 6,500 字 -->
 <hr>
 ```
 
@@ -249,7 +263,7 @@ hr { border: none; border-top: 1px solid #e5e7eb; margin: 24px 0; }
 <ol>
   <li><strong>因素1标题</strong> —— 分析内容，每点 2-3 句话，说清传导逻辑</li>
   <li><strong>因素2标题</strong> —— 分析内容...</li>
-  <!-- 通常 4-7 条 -->
+  <!-- 每板块 4–6 条，单条 ≤ 450 字，格式：**事实标题** —— 数据事实。**所以呢？结论 + 操作含义。** -->
 </ol>
 <p><strong>盘面</strong>：主力合约价格和状态描述。</p>
 <blockquote class="warn"><strong>本周关注</strong>：本周最重要的变量和关注点。</blockquote>
@@ -293,7 +307,9 @@ hr { border: none; border-top: 1px solid #e5e7eb; margin: 24px 0; }
   <li><strong>主题1标题</strong><br>关注原因和可能的影响路径，2-3句话</li>
   <li style="margin-top:10px;"><strong>主题2标题</strong><br>关注原因和可能的影响路径</li>
   <li style="margin-top:10px;"><strong>主题3标题</strong><br>关注原因和可能的影响路径</li>
+  <li style="margin-top:10px;"><strong>主题4标题</strong><br>关注原因和可能的影响路径</li>
 </ul>
+<!-- 今日重点关注 4–5 条，每条 ≤ 300 字；上面的核心主题 blockquote ≤ 500 字 -->
 <hr>
 ```
 
@@ -305,7 +321,7 @@ hr { border: none; border-top: 1px solid #e5e7eb; margin: 24px 0; }
 <ul>
   <li>...风险项1（含具体触发条件和影响方向）...</li>
   <li>...风险项2...</li>
-  <!-- 通常 5-8 条 -->
+  <!-- 6–8 条，每条 ≤ 180 字，结构：**风险名**：触发条件 + 影响方向 + 概率/幅度 -->
 </ul>
 <hr>
 ```
@@ -345,6 +361,15 @@ hr { border: none; border-top: 1px solid #e5e7eb; margin: 24px 0; }
 - [ ] ⑭ 关键数据（非农/CPI/PMI/社融/房地产/美联储/LPR）交叉验证后再写入
 - [ ] ⑮ 页脚只放页码（`.footer .page-num`），不写免责声明、数据来源或生成时间
 - [ ] ⑯ 数据来源放在正文末尾（`.dsrc`），不放在页脚；不写"本简报由 AI 生成…"等免责声明
+
+### 篇幅与结构检查（`verify-briefing.ps1` 覆盖）
+
+- [ ] ⑰ MD ≤ 45 KB、正文 ≤ 14,000 字
+- [ ] ⑱ 一级章节恰好 6 个（1→6 顺序固定）；二级子章节只有 4.1 / 4.2 / 4.3，**无 `### 3.x`**
+- [ ] ⑲ 表一 ≤ 10 行、表二 ≤ 18 行；**任何表格单元格 ≤ 120 字**；表二「实际值」栏只放数值
+- [ ] ⑳ 事件 3–6 个、无「标题 + 摘要」重复；板块 4 各 4–6 条；板块 6 为 6–8 条
+- [ ] ㉑ 全文无残留裸 `**`、无 emoji、无"（回顾）"行
+- [ ] ㉒ **`verify-briefing.ps1 -Date <日期>` 输出全部 PASS**（否则不得发布）
 
 ---
 
